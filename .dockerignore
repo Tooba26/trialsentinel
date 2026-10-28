@@ -1,0 +1,9 @@
+data/
+web/
+notebooks/
+reports/
+**/__pycache__
+**/.pytest_cache
+.git
+artifacts/shap_test_*
+artifacts/data_quality_report.json

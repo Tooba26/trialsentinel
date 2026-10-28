@@ -1,0 +1,14 @@
+# Render Blueprint: deploys the FastAPI model service from api/Dockerfile.
+# In Render: New > Blueprint > pick this repository.
+services:
+  - type: web
+    name: trialsentinel-api
+    runtime: docker
+    dockerfilePath: ./api/Dockerfile
+    dockerContext: .
+    plan: free        # ~410 MB RAM in use; 'free' (512 MB) also works but sleeps when idle
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://your-dashboard.vercel.app

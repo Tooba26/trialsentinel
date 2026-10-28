@@ -1,0 +1,791 @@
+{
+  "headline": {
+    "trials_analyzed": 75341,
+    "termination_rate": 0.1599,
+    "terminated_trials": 12046,
+    "withdrawn_excluded": 4638,
+    "start_year_window": [
+      2000,
+      2021
+    ]
+  },
+  "model": {
+    "selected": "lightgbm",
+    "roc_auc": 0.7315,
+    "pr_auc": 0.3422,
+    "f1_macro": 0.6271,
+    "accuracy": 0.786,
+    "precision": 0.3555,
+    "recall": 0.4167,
+    "brier": 0.1211,
+    "threshold": 0.24999999999999994,
+    "top_decile_lift": 2.57,
+    "top_decile_capture": 0.2573,
+    "temporal_roc_auc": 0.6807,
+    "comparison": [
+      {
+        "model": "logreg",
+        "cv_pr_auc": 0.289,
+        "cv_roc_auc": 0.6847,
+        "val_pr_auc": 0.286,
+        "val_roc_auc": 0.6888
+      },
+      {
+        "model": "xgboost",
+        "cv_pr_auc": 0.3341,
+        "cv_roc_auc": 0.7207,
+        "val_pr_auc": 0.3368,
+        "val_roc_auc": 0.7261
+      },
+      {
+        "model": "lightgbm",
+        "cv_pr_auc": 0.3356,
+        "cv_roc_auc": 0.7221,
+        "val_pr_auc": 0.3376,
+        "val_roc_auc": 0.7292
+      },
+      {
+        "model": "catboost",
+        "cv_pr_auc": 0.335,
+        "cv_roc_auc": 0.7213,
+        "val_pr_auc": 0.3347,
+        "val_roc_auc": 0.7256
+      }
+    ]
+  },
+  "risk_tiers": [
+    {
+      "tier": "Low",
+      "range": [
+        0.0,
+        0.1
+      ],
+      "share": 0.35984781454609804,
+      "observed_termination_rate": 0.054585689697565776,
+      "count": 4067
+    },
+    {
+      "tier": "Moderate",
+      "range": [
+        0.1,
+        0.2
+      ],
+      "share": 0.3480799858432136,
+      "observed_termination_rate": 0.14667005592272497,
+      "count": 3934
+    },
+    {
+      "tier": "High",
+      "range": [
+        0.2,
+        0.35
+      ],
+      "share": 0.21420987435852062,
+      "observed_termination_rate": 0.2569186286658406,
+      "count": 2421
+    },
+    {
+      "tier": "Critical",
+      "range": [
+        0.35,
+        1.0
+      ],
+      "share": 0.07786232525216776,
+      "observed_termination_rate": 0.43863636363636366,
+      "count": 880
+    }
+  ],
+  "probability_histogram": [
+    {
+      "lo": 0.0,
+      "hi": 0.025,
+      "count": 367,
+      "observed_rate": 0.013623978201634877
+    },
+    {
+      "lo": 0.025,
+      "hi": 0.05,
+      "count": 1075,
+      "observed_rate": 0.023255813953488372
+    },
+    {
+      "lo": 0.05,
+      "hi": 0.07500000000000001,
+      "count": 1360,
+      "observed_rate": 0.054411764705882354
+    },
+    {
+      "lo": 0.07500000000000001,
+      "hi": 0.1,
+      "count": 1265,
+      "observed_rate": 0.0932806324110672
+    },
+    {
+      "lo": 0.1,
+      "hi": 0.125,
+      "count": 1169,
+      "observed_rate": 0.11291702309666382
+    },
+    {
+      "lo": 0.125,
+      "hi": 0.15,
+      "count": 1054,
+      "observed_rate": 0.15180265654648956
+    },
+    {
+      "lo": 0.15000000000000002,
+      "hi": 0.17500000000000002,
+      "count": 921,
+      "observed_rate": 0.16069489685124863
+    },
+    {
+      "lo": 0.17500000000000002,
+      "hi": 0.2,
+      "count": 790,
+      "observed_rate": 0.17341772151898735
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.225,
+      "count": 654,
+      "observed_rate": 0.21559633027522937
+    },
+    {
+      "lo": 0.225,
+      "hi": 0.25,
+      "count": 529,
+      "observed_rate": 0.21550094517958412
+    },
+    {
+      "lo": 0.25,
+      "hi": 0.275,
+      "count": 411,
+      "observed_rate": 0.2822384428223844
+    },
+    {
+      "lo": 0.275,
+      "hi": 0.30000000000000004,
+      "count": 329,
+      "observed_rate": 0.2735562310030395
+    },
+    {
+      "lo": 0.30000000000000004,
+      "hi": 0.32500000000000007,
+      "count": 264,
+      "observed_rate": 0.32575757575757575
+    },
+    {
+      "lo": 0.325,
+      "hi": 0.35000000000000003,
+      "count": 234,
+      "observed_rate": 0.32051282051282054
+    },
+    {
+      "lo": 0.35000000000000003,
+      "hi": 0.37500000000000006,
+      "count": 190,
+      "observed_rate": 0.3736842105263158
+    },
+    {
+      "lo": 0.375,
+      "hi": 0.4,
+      "count": 158,
+      "observed_rate": 0.37341772151898733
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.42500000000000004,
+      "count": 140,
+      "observed_rate": 0.4642857142857143
+    },
+    {
+      "lo": 0.42500000000000004,
+      "hi": 0.45000000000000007,
+      "count": 112,
+      "observed_rate": 0.38392857142857145
+    },
+    {
+      "lo": 0.45,
+      "hi": 0.47500000000000003,
+      "count": 74,
+      "observed_rate": 0.5
+    },
+    {
+      "lo": 0.47500000000000003,
+      "hi": 0.5,
+      "count": 60,
+      "observed_rate": 0.5666666666666667
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.525,
+      "count": 29,
+      "observed_rate": 0.3793103448275862
+    },
+    {
+      "lo": 0.525,
+      "hi": 0.55,
+      "count": 42,
+      "observed_rate": 0.5238095238095238
+    },
+    {
+      "lo": 0.55,
+      "hi": 0.5750000000000001,
+      "count": 24,
+      "observed_rate": 0.6666666666666666
+    },
+    {
+      "lo": 0.5750000000000001,
+      "hi": 0.6000000000000001,
+      "count": 14,
+      "observed_rate": 0.35714285714285715
+    },
+    {
+      "lo": 0.6000000000000001,
+      "hi": 0.6250000000000001,
+      "count": 7,
+      "observed_rate": 0.5714285714285714
+    },
+    {
+      "lo": 0.625,
+      "hi": 0.65,
+      "count": 9,
+      "observed_rate": 0.7777777777777778
+    },
+    {
+      "lo": 0.65,
+      "hi": 0.675,
+      "count": 11,
+      "observed_rate": 0.36363636363636365
+    },
+    {
+      "lo": 0.675,
+      "hi": 0.7000000000000001,
+      "count": 5,
+      "observed_rate": 1.0
+    },
+    {
+      "lo": 0.7000000000000001,
+      "hi": 0.7250000000000001,
+      "count": 3,
+      "observed_rate": 0.3333333333333333
+    },
+    {
+      "lo": 0.7250000000000001,
+      "hi": 0.7500000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.75,
+      "hi": 0.775,
+      "count": 2,
+      "observed_rate": 1.0
+    },
+    {
+      "lo": 0.775,
+      "hi": 0.8,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.8250000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.8250000000000001,
+      "hi": 0.8500000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.8500000000000001,
+      "hi": 0.8750000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.875,
+      "hi": 0.9,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.9,
+      "hi": 0.925,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.925,
+      "hi": 0.9500000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.9500000000000001,
+      "hi": 0.9750000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.9750000000000001,
+      "hi": 1.0,
+      "count": 0,
+      "observed_rate": null
+    }
+  ],
+  "global_importance": [
+    {
+      "feature": "has_us_site",
+      "label": "Has a US site",
+      "mean_abs_shap": 0.27205667086862184
+    },
+    {
+      "feature": "primary_condition",
+      "label": "Primary condition",
+      "mean_abs_shap": 0.19261926483948424
+    },
+    {
+      "feature": "registration_lag_days",
+      "label": "Registration lag (days after start)",
+      "mean_abs_shap": 0.1854741220332625
+    },
+    {
+      "feature": "therapeutic_area",
+      "label": "Therapeutic area",
+      "mean_abs_shap": 0.17313193591939122
+    },
+    {
+      "feature": "sponsor_prior_termination_rate",
+      "label": "Sponsor track record (past termination rate)",
+      "mean_abs_shap": 0.16115897828084577
+    },
+    {
+      "feature": "start_year",
+      "label": "Start year (era effect)",
+      "mean_abs_shap": 0.10932406560280064
+    },
+    {
+      "feature": "has_drug",
+      "label": "Drug intervention",
+      "mean_abs_shap": 0.0848503457147868
+    },
+    {
+      "feature": "site_dispersion_index",
+      "label": "Site dispersion index",
+      "mean_abs_shap": 0.07970046490624748
+    },
+    {
+      "feature": "sponsor_prior_trials",
+      "label": "Sponsor experience (prior trials)",
+      "mean_abs_shap": 0.078261489414948
+    },
+    {
+      "feature": "n_sites",
+      "label": "Number of sites",
+      "mean_abs_shap": 0.07634765321692001
+    },
+    {
+      "feature": "primary_purpose",
+      "label": "Primary purpose",
+      "mean_abs_shap": 0.06520288849956306
+    },
+    {
+      "feature": "has_behavioral",
+      "label": "Behavioral intervention",
+      "mean_abs_shap": 0.05504747325860707
+    }
+  ],
+  "segments": {
+    "phase": [
+      {
+        "group": "PHASE1|PHASE2",
+        "trials": 8471,
+        "termination_rate": 0.2034
+      },
+      {
+        "group": "PHASE2",
+        "trials": 36627,
+        "termination_rate": 0.1778
+      },
+      {
+        "group": "PHASE2|PHASE3",
+        "trials": 4023,
+        "termination_rate": 0.1462
+      },
+      {
+        "group": "PHASE3",
+        "trials": 26220,
+        "termination_rate": 0.1229
+      }
+    ],
+    "therapeutic_area": [
+      {
+        "group": "Oncology",
+        "trials": 22368,
+        "termination_rate": 0.2319
+      },
+      {
+        "group": "Hematology",
+        "trials": 801,
+        "termination_rate": 0.1685
+      },
+      {
+        "group": "Neurology",
+        "trials": 3121,
+        "termination_rate": 0.164
+      },
+      {
+        "group": "Cardiovascular",
+        "trials": 5144,
+        "termination_rate": 0.151
+      },
+      {
+        "group": "Ophthalmology",
+        "trials": 911,
+        "termination_rate": 0.1493
+      },
+      {
+        "group": "Renal & urology",
+        "trials": 1427,
+        "termination_rate": 0.1451
+      },
+      {
+        "group": "Gastroenterology & hepatology",
+        "trials": 1008,
+        "termination_rate": 0.1379
+      },
+      {
+        "group": "Other",
+        "trials": 15373,
+        "termination_rate": 0.1291
+      },
+      {
+        "group": "Infectious disease",
+        "trials": 7122,
+        "termination_rate": 0.1276
+      },
+      {
+        "group": "Immunology & rheumatology",
+        "trials": 4268,
+        "termination_rate": 0.1242
+      },
+      {
+        "group": "Respiratory",
+        "trials": 2557,
+        "termination_rate": 0.1197
+      },
+      {
+        "group": "Metabolic & endocrine",
+        "trials": 4552,
+        "termination_rate": 0.1145
+      },
+      {
+        "group": "Psychiatry",
+        "trials": 3303,
+        "termination_rate": 0.1096
+      },
+      {
+        "group": "Pain & anesthesia",
+        "trials": 1915,
+        "termination_rate": 0.1055
+      },
+      {
+        "group": "Women's health",
+        "trials": 832,
+        "termination_rate": 0.0998
+      },
+      {
+        "group": "Dermatology",
+        "trials": 639,
+        "termination_rate": 0.0876
+      }
+    ],
+    "funder_type": [
+      {
+        "group": "INDIV",
+        "trials": 107,
+        "termination_rate": 0.1869
+      },
+      {
+        "group": "OTHER",
+        "trials": 33372,
+        "termination_rate": 0.175
+      },
+      {
+        "group": "NIH",
+        "trials": 2660,
+        "termination_rate": 0.1579
+      },
+      {
+        "group": "NETWORK",
+        "trials": 1225,
+        "termination_rate": 0.1518
+      },
+      {
+        "group": "INDUSTRY",
+        "trials": 36399,
+        "termination_rate": 0.1489
+      },
+      {
+        "group": "OTHER_GOV",
+        "trials": 1038,
+        "termination_rate": 0.104
+      },
+      {
+        "group": "FED",
+        "trials": 525,
+        "termination_rate": 0.101
+      }
+    ],
+    "sites": [
+      {
+        "group": "2-5",
+        "trials": 10815,
+        "termination_rate": 0.1819
+      },
+      {
+        "group": "6-20",
+        "trials": 12465,
+        "termination_rate": 0.1705
+      },
+      {
+        "group": "1",
+        "trials": 31619,
+        "termination_rate": 0.1633
+      },
+      {
+        "group": "21-100",
+        "trials": 12219,
+        "termination_rate": 0.1476
+      },
+      {
+        "group": "100+",
+        "trials": 3354,
+        "termination_rate": 0.147
+      }
+    ],
+    "sponsor_track_record": [
+      {
+        "group": ">20%",
+        "trials": 9971,
+        "termination_rate": 0.2457
+      },
+      {
+        "group": "10-20%",
+        "trials": 14168,
+        "termination_rate": 0.1941
+      },
+      {
+        "group": "5-10%",
+        "trials": 9047,
+        "termination_rate": 0.1459
+      },
+      {
+        "group": "0-5%",
+        "trials": 24871,
+        "termination_rate": 0.1144
+      }
+    ],
+    "intervention_model": [
+      {
+        "group": "SEQUENTIAL",
+        "trials": 1297,
+        "termination_rate": 0.3053
+      },
+      {
+        "group": "SINGLE_GROUP",
+        "trials": 21561,
+        "termination_rate": 0.1983
+      },
+      {
+        "group": "PARALLEL",
+        "trials": 46625,
+        "termination_rate": 0.1451
+      },
+      {
+        "group": "CROSSOVER",
+        "trials": 3645,
+        "termination_rate": 0.104
+      },
+      {
+        "group": "FACTORIAL",
+        "trials": 809,
+        "termination_rate": 0.0964
+      }
+    ]
+  },
+  "by_start_year": [
+    {
+      "year": 2000,
+      "trials": 1058,
+      "termination_rate": 0.086
+    },
+    {
+      "year": 2001,
+      "trials": 1359,
+      "termination_rate": 0.0883
+    },
+    {
+      "year": 2002,
+      "trials": 1873,
+      "termination_rate": 0.0924
+    },
+    {
+      "year": 2003,
+      "trials": 2411,
+      "termination_rate": 0.1066
+    },
+    {
+      "year": 2004,
+      "trials": 3087,
+      "termination_rate": 0.1027
+    },
+    {
+      "year": 2005,
+      "trials": 3620,
+      "termination_rate": 0.1271
+    },
+    {
+      "year": 2006,
+      "trials": 4089,
+      "termination_rate": 0.1519
+    },
+    {
+      "year": 2007,
+      "trials": 4182,
+      "termination_rate": 0.1655
+    },
+    {
+      "year": 2008,
+      "trials": 4380,
+      "termination_rate": 0.1607
+    },
+    {
+      "year": 2009,
+      "trials": 4310,
+      "termination_rate": 0.1545
+    },
+    {
+      "year": 2010,
+      "trials": 4189,
+      "termination_rate": 0.1535
+    },
+    {
+      "year": 2011,
+      "trials": 4233,
+      "termination_rate": 0.1495
+    },
+    {
+      "year": 2012,
+      "trials": 4058,
+      "termination_rate": 0.1538
+    },
+    {
+      "year": 2013,
+      "trials": 3874,
+      "termination_rate": 0.1546
+    },
+    {
+      "year": 2014,
+      "trials": 3817,
+      "termination_rate": 0.1491
+    },
+    {
+      "year": 2015,
+      "trials": 3954,
+      "termination_rate": 0.1631
+    },
+    {
+      "year": 2016,
+      "trials": 3601,
+      "termination_rate": 0.15
+    },
+    {
+      "year": 2017,
+      "trials": 3680,
+      "termination_rate": 0.1829
+    },
+    {
+      "year": 2018,
+      "trials": 3557,
+      "termination_rate": 0.2038
+    },
+    {
+      "year": 2019,
+      "trials": 3262,
+      "termination_rate": 0.2137
+    },
+    {
+      "year": 2020,
+      "trials": 3458,
+      "termination_rate": 0.2299
+    },
+    {
+      "year": 2021,
+      "trials": 3289,
+      "termination_rate": 0.2438
+    }
+  ],
+  "data_quality": {
+    "steps": [
+      {
+        "step": "exact / NCT duplicates",
+        "rows_before": 90329,
+        "rows_after": 90329,
+        "removed": 0,
+        "note": ""
+      },
+      {
+        "step": "near-duplicates (same title, sponsor, start date)",
+        "rows_before": 90329,
+        "rows_after": 90223,
+        "removed": 106,
+        "note": "multi-registrations of one protocol"
+      },
+      {
+        "step": "missing / impossible start dates",
+        "rows_before": 90223,
+        "rows_after": 89118,
+        "removed": 1105,
+        "note": ""
+      },
+      {
+        "step": "first-posted date before the registry existed",
+        "rows_before": 89118,
+        "rows_after": 89118,
+        "removed": 0,
+        "note": ""
+      },
+      {
+        "step": "negative counts",
+        "rows_before": 89118,
+        "rows_after": 89118,
+        "removed": 0,
+        "note": ""
+      },
+      {
+        "step": "withdrawn trials (stopped before enrolling; separate outcome)",
+        "rows_before": 89118,
+        "rows_after": 84480,
+        "removed": 4638,
+        "note": ""
+      },
+      {
+        "step": "outside 2000-2021 start window (right-censoring)",
+        "rows_before": 84480,
+        "rows_after": 75341,
+        "removed": 9139,
+        "note": ""
+      }
+    ],
+    "excluded_for_leakage": [
+      "Enrollment (export holds ACTUAL enrollment; terminated median 24 vs completed 90)",
+      "Primary Completion Date / Completion Date (duration reveals early stop)",
+      "Study Results, Results First Posted, Study Documents, Last Update Posted"
+    ]
+  }
+}

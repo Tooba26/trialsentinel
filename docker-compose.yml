@@ -1,0 +1,18 @@
+# Local full stack: API on :8000, dashboard on :3000
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    ports: ["8000:8000"]
+    environment:
+      ALLOWED_ORIGINS: http://localhost:3000
+  web:
+    image: node:22-alpine
+    working_dir: /app
+    volumes: ["./web:/app"]
+    command: sh -c "npm ci && npm run build && npm start"
+    environment:
+      API_URL: http://api:8000
+    ports: ["3000:3000"]
+    depends_on: [api]

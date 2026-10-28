@@ -1,0 +1,643 @@
+{
+  "dataset": {
+    "rows": 75341,
+    "train": 52738,
+    "val": 11301,
+    "test": 11302,
+    "termination_rate": 0.1598863832441831,
+    "start_year_window": [
+      2000,
+      2021
+    ]
+  },
+  "vif_dropped": [
+    {
+      "feature": "outcome_burden_score",
+      "vif": 1000799917193443.5
+    }
+  ],
+  "vif_final": [
+    {
+      "feature": "design_rigor_score",
+      "vif": 4.85
+    },
+    {
+      "feature": "masking_level",
+      "vif": 4.62
+    },
+    {
+      "feature": "n_sites",
+      "vif": 2.71
+    },
+    {
+      "feature": "n_countries",
+      "vif": 2.3
+    },
+    {
+      "feature": "site_dispersion_index",
+      "vif": 1.41
+    },
+    {
+      "feature": "start_year",
+      "vif": 1.33
+    },
+    {
+      "feature": "registration_lag_days",
+      "vif": 1.3
+    },
+    {
+      "feature": "n_secondary_outcomes",
+      "vif": 1.22
+    },
+    {
+      "feature": "sponsor_prior_trials",
+      "vif": 1.2
+    },
+    {
+      "feature": "n_interventions",
+      "vif": 1.13
+    },
+    {
+      "feature": "n_conditions",
+      "vif": 1.05
+    },
+    {
+      "feature": "n_primary_outcomes",
+      "vif": 1.05
+    },
+    {
+      "feature": "n_collaborators",
+      "vif": 1.03
+    },
+    {
+      "feature": "sponsor_prior_termination_rate",
+      "vif": 1.03
+    },
+    {
+      "feature": "eligibility_breadth",
+      "vif": 1.02
+    }
+  ],
+  "imbalance_experiment": {
+    "none": {
+      "cv_pr_auc": 0.33062956693623474,
+      "cv_roc_auc": 0.7180692439405639
+    },
+    "class_weight": {
+      "cv_pr_auc": 0.3285326871587402,
+      "cv_roc_auc": 0.717294926326787
+    },
+    "smotenc": {
+      "cv_pr_auc": 0.32604613014182776,
+      "cv_roc_auc": 0.7152543276529885
+    }
+  },
+  "imbalance_strategy": "none",
+  "models": {
+    "logreg": {
+      "best_params": {
+        "C": 0.05342937261279776,
+        "l1_ratio": 0.2912291401980419
+      },
+      "cv_pr_auc": 0.28901472304919495,
+      "cv_roc_auc": 0.6847046301348513,
+      "trials": 12,
+      "minutes": 3.6,
+      "sampling": "class_weight",
+      "val_pr_auc": 0.2859920683338022,
+      "val_roc_auc": 0.6888119942703451
+    },
+    "xgboost": {
+      "best_params": {
+        "n_estimators": 700,
+        "learning_rate": 0.022132993386814123,
+        "max_depth": 6,
+        "min_child_weight": 2.8759880074657267,
+        "subsample": 0.6906290553059319,
+        "colsample_bytree": 0.880954243133427,
+        "reg_lambda": 0.9831218114776322
+      },
+      "cv_pr_auc": 0.3340501283983936,
+      "cv_roc_auc": 0.7206579647357747,
+      "trials": 25,
+      "minutes": 8.3,
+      "sampling": "none",
+      "val_pr_auc": 0.33680795339420777,
+      "val_roc_auc": 0.7260987308093925
+    },
+    "lightgbm": {
+      "best_params": {
+        "n_estimators": 700,
+        "learning_rate": 0.02384465205415369,
+        "num_leaves": 79,
+        "min_child_samples": 16,
+        "subsample": 0.9718207000148188,
+        "colsample_bytree": 0.5240483409140726,
+        "reg_lambda": 1.4086551214494185
+      },
+      "cv_pr_auc": 0.33556358297513633,
+      "cv_roc_auc": 0.722086289188667,
+      "trials": 28,
+      "minutes": 14.3,
+      "sampling": "none",
+      "val_pr_auc": 0.33759937569486076,
+      "val_roc_auc": 0.729201934428863
+    },
+    "catboost": {
+      "best_params": {
+        "iterations": 700,
+        "learning_rate": 0.0327636407868471,
+        "depth": 7,
+        "l2_leaf_reg": 1.6666983286066417
+      },
+      "cv_pr_auc": 0.33500058899250107,
+      "cv_roc_auc": 0.7212914900535256,
+      "trials": 10,
+      "minutes": 8.0,
+      "sampling": "none",
+      "val_pr_auc": 0.33467057023216196,
+      "val_roc_auc": 0.725645848151088
+    }
+  },
+  "selected_model": "lightgbm",
+  "test_metrics": {
+    "roc_auc": 0.7314892963500145,
+    "pr_auc": 0.3422320752936653,
+    "f1_macro": 0.6270952733799973,
+    "f1_terminated": 0.38369426751592356,
+    "precision": 0.3555240793201133,
+    "recall": 0.41671278361925845,
+    "accuracy": 0.785967085471598,
+    "brier": 0.12108958454537845,
+    "base_rate": 0.15988320651212176,
+    "top_decile_precision": 0.41150442477876104,
+    "top_decile_lift": 2.57378141054209,
+    "top_decile_capture": 0.25733259546209186,
+    "threshold": 0.24999999999999994
+  },
+  "risk_tiers": [
+    {
+      "tier": "Low",
+      "range": [
+        0.0,
+        0.1
+      ],
+      "share": 0.35984781454609804,
+      "observed_termination_rate": 0.054585689697565776,
+      "count": 4067
+    },
+    {
+      "tier": "Moderate",
+      "range": [
+        0.1,
+        0.2
+      ],
+      "share": 0.3480799858432136,
+      "observed_termination_rate": 0.14667005592272497,
+      "count": 3934
+    },
+    {
+      "tier": "High",
+      "range": [
+        0.2,
+        0.35
+      ],
+      "share": 0.21420987435852062,
+      "observed_termination_rate": 0.2569186286658406,
+      "count": 2421
+    },
+    {
+      "tier": "Critical",
+      "range": [
+        0.35,
+        1.0
+      ],
+      "share": 0.07786232525216776,
+      "observed_termination_rate": 0.43863636363636366,
+      "count": 880
+    }
+  ],
+  "temporal_validation": {
+    "train": "start 2000-2014",
+    "test": "start 2017-2021",
+    "n_train": 50540,
+    "n_test": 17246,
+    "roc_auc": 0.680695869465439,
+    "pr_auc": 0.3486086653098014,
+    "test_base_rate": 0.2140786269279833
+  },
+  "test_probability_histogram": [
+    {
+      "lo": 0.0,
+      "hi": 0.025,
+      "count": 367,
+      "observed_rate": 0.013623978201634877
+    },
+    {
+      "lo": 0.025,
+      "hi": 0.05,
+      "count": 1075,
+      "observed_rate": 0.023255813953488372
+    },
+    {
+      "lo": 0.05,
+      "hi": 0.07500000000000001,
+      "count": 1360,
+      "observed_rate": 0.054411764705882354
+    },
+    {
+      "lo": 0.07500000000000001,
+      "hi": 0.1,
+      "count": 1265,
+      "observed_rate": 0.0932806324110672
+    },
+    {
+      "lo": 0.1,
+      "hi": 0.125,
+      "count": 1169,
+      "observed_rate": 0.11291702309666382
+    },
+    {
+      "lo": 0.125,
+      "hi": 0.15,
+      "count": 1054,
+      "observed_rate": 0.15180265654648956
+    },
+    {
+      "lo": 0.15000000000000002,
+      "hi": 0.17500000000000002,
+      "count": 921,
+      "observed_rate": 0.16069489685124863
+    },
+    {
+      "lo": 0.17500000000000002,
+      "hi": 0.2,
+      "count": 790,
+      "observed_rate": 0.17341772151898735
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.225,
+      "count": 654,
+      "observed_rate": 0.21559633027522937
+    },
+    {
+      "lo": 0.225,
+      "hi": 0.25,
+      "count": 529,
+      "observed_rate": 0.21550094517958412
+    },
+    {
+      "lo": 0.25,
+      "hi": 0.275,
+      "count": 411,
+      "observed_rate": 0.2822384428223844
+    },
+    {
+      "lo": 0.275,
+      "hi": 0.30000000000000004,
+      "count": 329,
+      "observed_rate": 0.2735562310030395
+    },
+    {
+      "lo": 0.30000000000000004,
+      "hi": 0.32500000000000007,
+      "count": 264,
+      "observed_rate": 0.32575757575757575
+    },
+    {
+      "lo": 0.325,
+      "hi": 0.35000000000000003,
+      "count": 234,
+      "observed_rate": 0.32051282051282054
+    },
+    {
+      "lo": 0.35000000000000003,
+      "hi": 0.37500000000000006,
+      "count": 190,
+      "observed_rate": 0.3736842105263158
+    },
+    {
+      "lo": 0.375,
+      "hi": 0.4,
+      "count": 158,
+      "observed_rate": 0.37341772151898733
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.42500000000000004,
+      "count": 140,
+      "observed_rate": 0.4642857142857143
+    },
+    {
+      "lo": 0.42500000000000004,
+      "hi": 0.45000000000000007,
+      "count": 112,
+      "observed_rate": 0.38392857142857145
+    },
+    {
+      "lo": 0.45,
+      "hi": 0.47500000000000003,
+      "count": 74,
+      "observed_rate": 0.5
+    },
+    {
+      "lo": 0.47500000000000003,
+      "hi": 0.5,
+      "count": 60,
+      "observed_rate": 0.5666666666666667
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.525,
+      "count": 29,
+      "observed_rate": 0.3793103448275862
+    },
+    {
+      "lo": 0.525,
+      "hi": 0.55,
+      "count": 42,
+      "observed_rate": 0.5238095238095238
+    },
+    {
+      "lo": 0.55,
+      "hi": 0.5750000000000001,
+      "count": 24,
+      "observed_rate": 0.6666666666666666
+    },
+    {
+      "lo": 0.5750000000000001,
+      "hi": 0.6000000000000001,
+      "count": 14,
+      "observed_rate": 0.35714285714285715
+    },
+    {
+      "lo": 0.6000000000000001,
+      "hi": 0.6250000000000001,
+      "count": 7,
+      "observed_rate": 0.5714285714285714
+    },
+    {
+      "lo": 0.625,
+      "hi": 0.65,
+      "count": 9,
+      "observed_rate": 0.7777777777777778
+    },
+    {
+      "lo": 0.65,
+      "hi": 0.675,
+      "count": 11,
+      "observed_rate": 0.36363636363636365
+    },
+    {
+      "lo": 0.675,
+      "hi": 0.7000000000000001,
+      "count": 5,
+      "observed_rate": 1.0
+    },
+    {
+      "lo": 0.7000000000000001,
+      "hi": 0.7250000000000001,
+      "count": 3,
+      "observed_rate": 0.3333333333333333
+    },
+    {
+      "lo": 0.7250000000000001,
+      "hi": 0.7500000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.75,
+      "hi": 0.775,
+      "count": 2,
+      "observed_rate": 1.0
+    },
+    {
+      "lo": 0.775,
+      "hi": 0.8,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.8250000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.8250000000000001,
+      "hi": 0.8500000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.8500000000000001,
+      "hi": 0.8750000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.875,
+      "hi": 0.9,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.9,
+      "hi": 0.925,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.925,
+      "hi": 0.9500000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.9500000000000001,
+      "hi": 0.9750000000000001,
+      "count": 0,
+      "observed_rate": null
+    },
+    {
+      "lo": 0.9750000000000001,
+      "hi": 1.0,
+      "count": 0,
+      "observed_rate": null
+    }
+  ],
+  "global_shap": [
+    {
+      "feature": "has_us_site",
+      "label": "Has a US site",
+      "mean_abs_shap": 0.27205667086862184
+    },
+    {
+      "feature": "primary_condition",
+      "label": "Primary condition",
+      "mean_abs_shap": 0.19261926483948424
+    },
+    {
+      "feature": "registration_lag_days",
+      "label": "Registration lag (days after start)",
+      "mean_abs_shap": 0.1854741220332625
+    },
+    {
+      "feature": "therapeutic_area",
+      "label": "Therapeutic area",
+      "mean_abs_shap": 0.17313193591939122
+    },
+    {
+      "feature": "sponsor_prior_termination_rate",
+      "label": "Sponsor track record (past termination rate)",
+      "mean_abs_shap": 0.16115897828084577
+    },
+    {
+      "feature": "start_year",
+      "label": "Start year",
+      "mean_abs_shap": 0.10932406560280064
+    },
+    {
+      "feature": "has_drug",
+      "label": "Drug intervention",
+      "mean_abs_shap": 0.0848503457147868
+    },
+    {
+      "feature": "site_dispersion_index",
+      "label": "Site dispersion index",
+      "mean_abs_shap": 0.07970046490624748
+    },
+    {
+      "feature": "sponsor_prior_trials",
+      "label": "Sponsor experience (prior trials)",
+      "mean_abs_shap": 0.078261489414948
+    },
+    {
+      "feature": "n_sites",
+      "label": "Number of sites",
+      "mean_abs_shap": 0.07634765321692001
+    },
+    {
+      "feature": "primary_purpose",
+      "label": "Primary purpose",
+      "mean_abs_shap": 0.06520288849956306
+    },
+    {
+      "feature": "has_behavioral",
+      "label": "Behavioral intervention",
+      "mean_abs_shap": 0.05504747325860707
+    },
+    {
+      "feature": "n_primary_outcomes",
+      "label": "Primary outcomes",
+      "mean_abs_shap": 0.0543972718794964
+    },
+    {
+      "feature": "n_interventions",
+      "label": "Number of interventions",
+      "mean_abs_shap": 0.053469916581587146
+    },
+    {
+      "feature": "n_secondary_outcomes",
+      "label": "Secondary outcomes",
+      "mean_abs_shap": 0.05239963460911384
+    },
+    {
+      "feature": "masking_level",
+      "label": "Blinding level",
+      "mean_abs_shap": 0.050979263850040764
+    },
+    {
+      "feature": "age_older",
+      "label": "Enrolls older adults",
+      "mean_abs_shap": 0.04457422893797976
+    },
+    {
+      "feature": "phase",
+      "label": "Trial phase",
+      "mean_abs_shap": 0.04222998975240812
+    },
+    {
+      "feature": "funder_type",
+      "label": "Funder type",
+      "mean_abs_shap": 0.040220263628089344
+    },
+    {
+      "feature": "n_collaborators",
+      "label": "Number of collaborators",
+      "mean_abs_shap": 0.03939144119778987
+    },
+    {
+      "feature": "design_rigor_score",
+      "label": "Design rigor score",
+      "mean_abs_shap": 0.03800602950753282
+    },
+    {
+      "feature": "intervention_model",
+      "label": "Intervention model",
+      "mean_abs_shap": 0.03592049723502373
+    },
+    {
+      "feature": "n_conditions",
+      "label": "Number of conditions",
+      "mean_abs_shap": 0.02437968004529397
+    },
+    {
+      "feature": "eligibility_breadth",
+      "label": "Eligibility breadth",
+      "mean_abs_shap": 0.02159070320154717
+    },
+    {
+      "feature": "n_countries",
+      "label": "Number of countries",
+      "mean_abs_shap": 0.02075208885678958
+    },
+    {
+      "feature": "has_placebo",
+      "label": "Placebo arm",
+      "mean_abs_shap": 0.019233334805096203
+    },
+    {
+      "feature": "allocation",
+      "label": "Allocation",
+      "mean_abs_shap": 0.017597913772662642
+    },
+    {
+      "feature": "has_procedure",
+      "label": "Procedure intervention",
+      "mean_abs_shap": 0.016001354534081257
+    },
+    {
+      "feature": "age_child",
+      "label": "Enrolls children",
+      "mean_abs_shap": 0.013025403143278668
+    },
+    {
+      "feature": "sex",
+      "label": "Sex eligibility",
+      "mean_abs_shap": 0.010874058487384446
+    },
+    {
+      "feature": "has_biological",
+      "label": "Biological intervention",
+      "mean_abs_shap": 0.00869021306551752
+    },
+    {
+      "feature": "is_pilot",
+      "label": "Pilot / feasibility study",
+      "mean_abs_shap": 0.005495434068928891
+    },
+    {
+      "feature": "age_adult",
+      "label": "Enrolls adults",
+      "mean_abs_shap": 0.0035352773263892918
+    },
+    {
+      "feature": "has_device",
+      "label": "Device intervention",
+      "mean_abs_shap": 0.002638886648924485
+    }
+  ]
+}

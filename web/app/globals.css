@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --paper: #eef3f6;
+  --paper-grid: rgba(19, 36, 59, 0.06);
+  --ink: #13243b;
+  --ink-soft: #4a5d73;
+  --ink-faint: #7f91a3;
+  --line: rgba(19, 36, 59, 0.12);
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-edge: rgba(255, 255, 255, 0.9);
+  --field: #ffffff;
+  --focus: #0e7c86;
+  --risk-low: #0e7c86;
+  --risk-mid: #c28800;
+  --risk-high: #d4651a;
+  --risk-critical: #b4233c;
+  --bar-muted: #b9c8d4;
+}
+
+.dark {
+  --paper: #0a1626;
+  --paper-grid: rgba(159, 179, 194, 0.06);
+  --ink: #e7eef4;
+  --ink-soft: #a9bccb;
+  --ink-faint: #71879a;
+  --line: rgba(159, 179, 194, 0.16);
+  --glass: rgba(20, 38, 60, 0.6);
+  --glass-edge: rgba(159, 179, 194, 0.18);
+  --field: #10223a;
+  --focus: #3fb6bf;
+  --risk-low: #3fb6bf;
+  --risk-mid: #e8b23a;
+  --risk-high: #f08a45;
+  --risk-critical: #f0607a;
+  --bar-muted: #2c4560;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-field: var(--field);
+  --color-focus: var(--focus);
+  --color-low: var(--risk-low);
+  --color-mid: var(--risk-mid);
+  --color-high: var(--risk-high);
+  --color-critical: var(--risk-critical);
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "IBM Plex Sans Condensed", "IBM Plex Sans", ui-sans-serif, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--paper);
+  /* chart-paper grid, the visual signature of a protocol worksheet */
+  background-image:
+    linear-gradient(var(--paper-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--paper-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

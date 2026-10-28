@@ -1,0 +1,133 @@
+{
+  "raw_rows": 90329,
+  "modeling_rows": 75341,
+  "withdrawn_excluded": 4638,
+  "termination_rate": 0.1598863832441831,
+  "steps": [
+    {
+      "step": "exact / NCT duplicates",
+      "rows_before": 90329,
+      "rows_after": 90329,
+      "removed": 0,
+      "note": ""
+    },
+    {
+      "step": "near-duplicates (same title, sponsor, start date)",
+      "rows_before": 90329,
+      "rows_after": 90223,
+      "removed": 106,
+      "note": "multi-registrations of one protocol"
+    },
+    {
+      "step": "missing / impossible start dates",
+      "rows_before": 90223,
+      "rows_after": 89118,
+      "removed": 1105,
+      "note": ""
+    },
+    {
+      "step": "first-posted date before the registry existed",
+      "rows_before": 89118,
+      "rows_after": 89118,
+      "removed": 0,
+      "note": ""
+    },
+    {
+      "step": "negative counts",
+      "rows_before": 89118,
+      "rows_after": 89118,
+      "removed": 0,
+      "note": ""
+    },
+    {
+      "step": "withdrawn trials (stopped before enrolling; separate outcome)",
+      "rows_before": 89118,
+      "rows_after": 84480,
+      "removed": 4638,
+      "note": ""
+    },
+    {
+      "step": "outside 2000-2021 start window (right-censoring)",
+      "rows_before": 84480,
+      "rows_after": 75341,
+      "removed": 9139,
+      "note": ""
+    }
+  ],
+  "outlier_capping": {
+    "n_sites": {
+      "capped_iqr": 699,
+      "abs_z_gt_3": 1090
+    },
+    "n_countries": {
+      "capped_iqr": 644,
+      "abs_z_gt_3": 2058
+    },
+    "registration_lag_days": {
+      "capped_iqr": 1217,
+      "abs_z_gt_3": 1636
+    },
+    "n_secondary_outcomes": {
+      "capped_iqr": 741,
+      "abs_z_gt_3": 1332
+    },
+    "n_primary_outcomes": {
+      "capped_iqr": 666,
+      "abs_z_gt_3": 877
+    },
+    "n_collaborators": {
+      "capped_iqr": 730,
+      "abs_z_gt_3": 1091
+    },
+    "n_interventions": {
+      "capped_iqr": 417,
+      "abs_z_gt_3": 1578
+    },
+    "n_conditions": {
+      "capped_iqr": 736,
+      "abs_z_gt_3": 583
+    }
+  },
+  "missing_share": {
+    "phase": 0.0,
+    "funder_type": 0.0,
+    "allocation": 0.0145,
+    "intervention_model": 0.0186,
+    "primary_purpose": 0.0094,
+    "sex": 0.0005,
+    "therapeutic_area": 0.0,
+    "primary_condition": 0.0,
+    "age_child": 0.0,
+    "age_adult": 0.0,
+    "age_older": 0.0,
+    "has_drug": 0.0,
+    "has_biological": 0.0,
+    "has_device": 0.0,
+    "has_behavioral": 0.0,
+    "has_procedure": 0.0,
+    "has_placebo": 0.0,
+    "has_us_site": 0.0,
+    "is_pilot": 0.0,
+    "n_collaborators": 0.0,
+    "n_conditions": 0.0,
+    "n_interventions": 0.0,
+    "n_primary_outcomes": 0.0,
+    "n_secondary_outcomes": 0.0,
+    "sponsor_prior_trials": 0.0,
+    "n_sites": 0.0646,
+    "n_countries": 0.0646,
+    "sponsor_prior_termination_rate": 0.2294,
+    "registration_lag_days": 0.0,
+    "masking_level": 0.0126,
+    "start_year": 0.0,
+    "site_dispersion_index": 0.0646,
+    "outcome_burden_score": 0.0,
+    "eligibility_breadth": 0.0,
+    "design_rigor_score": 0.0
+  },
+  "excluded_for_leakage": [
+    "Enrollment (export holds ACTUAL enrollment; terminated median 24 vs completed 90)",
+    "Primary Completion Date / Completion Date (duration reveals early stop)",
+    "Study Results, Results First Posted, Study Documents, Last Update Posted"
+  ]
+}
