@@ -8,7 +8,7 @@ It is trained on 75,341 interventional trials from ClinicalTrials.gov that start
 
 | | |
 |---|---|
-| **Live demo** | `https://your-dashboard.vercel.app` *(add after deploying, see [DEPLOY.md](DEPLOY.md))* |
+| **Live demo** | `https://trialsentinel-kjqp.vercel.app/` *(add after deploying, see [DEPLOY.md](DEPLOY.md))* |
 | **API docs** | `https://trialsentinel-api.onrender.com/docs` |
 | **Kaggle notebook** | `https://www.kaggle.com/code/your-username/trialsentinel` |
 | **Notebook in repo** | [`notebooks/trialsentinel_eda_and_model.ipynb`](notebooks/trialsentinel_eda_and_model.ipynb) |
